@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DataSense Pasifik Advisory | Empowering Pacific futures through data</title>
+<meta name="description" content="DataSense Pasifik Advisory is a business advisory firm in Papua New Guinea helping government, business, development partners and communities use data responsibly: data governance, analytics, information security and financial advisory.">
+<meta property="og:title" content="DataSense Pasifik Advisory">
+<meta property="og:description" content="Empowering Pacific futures through data.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2346; --green:#1B4D2E; --grey:#5C6165; --midnavy:#3A4F6E;
+    --lightgrey:#B9BEC4; --mist:#DCE6DF; --tint:#E6EFE9; --cloud:#F4F6F8;
+    --black:#000; --white:#fff;
+    --max:1140px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,Arial,sans-serif;font-size:17px;line-height:1.65;color:#111;background:var(--white)}
+  h1,h2{font-family:Poppins,Arial,sans-serif;font-weight:700;color:var(--navy);line-height:1.2;margin:0 0 .5em}
+  h3{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:1.08rem;margin:0 0 .4em;color:#000}
+  p{margin:0 0 1em}
+  a{color:var(--green)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:8px 14px;z-index:100}
+  .skip:focus{left:8px;top:8px}
+
+  /* Colour strip: Mist across most, then Navy, ending in Green */
+  .strip{height:6px;background:linear-gradient(90deg,var(--mist) 0 70%,var(--midnavy) 76%,var(--navy) 82% 92%,var(--green) 92% 100%)}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid #e7eaee;backdrop-filter:saturate(1.2) blur(6px)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 24px;max-width:var(--max);margin:0 auto}
+  .brand img{display:block;width:210px;height:auto}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px}
+  nav a{color:var(--navy);text-decoration:none;font-weight:600;font-size:.95rem}
+  nav a:hover{color:var(--green)}
+  .menu-btn{display:none;background:none;border:1px solid var(--lightgrey);border-radius:6px;padding:8px 12px;font:600 .9rem Inter,Arial,sans-serif;color:var(--navy);cursor:pointer}
+
+  .hero{background:linear-gradient(180deg,var(--white) 0%,var(--cloud) 100%);padding:88px 0 80px;border-bottom:1px solid #e7eaee}
+  .hero .eyebrow{font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;font-size:.82rem;margin-bottom:14px}
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.4rem);max-width:17ch}
+  .hero p.lead{font-size:1.18rem;color:var(--grey);max-width:60ch}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+  .btn{display:inline-block;padding:13px 24px;border-radius:6px;font-weight:600;text-decoration:none;font-size:1rem}
+  .btn.primary{background:var(--navy);color:#fff}
+  .btn.primary:hover{background:var(--midnavy)}
+  .btn.ghost{border:2px solid var(--navy);color:var(--navy)}
+  .btn.ghost:hover{background:var(--navy);color:#fff}
+
+  section{padding:84px 0}
+  section.alt{background:var(--cloud)}
+  .section-head{max-width:720px;margin-bottom:44px}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+  .section-head p{color:var(--grey);font-size:1.08rem}
+  .kicker{display:block;font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;margin-bottom:8px}
+
+  .grid{display:grid;gap:24px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .card{background:#fff;border:1px solid #e3e7eb;border-radius:10px;padding:28px;border-top:4px solid var(--navy)}
+  .card .num{font-family:Poppins,Arial,sans-serif;font-weight:700;color:var(--green);font-size:.9rem;margin-bottom:10px;display:block}
+  .card p{color:#333;margin:0}
+  .card ul{margin:.6em 0 0;padding-left:1.1em;color:#333}
+  .card li{margin:.2em 0}
+
+  .about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+  .callout{background:var(--tint);border-left:5px solid var(--green);padding:24px 26px;border-radius:0 8px 8px 0}
+  .callout strong{color:var(--navy)}
+  .who{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+  .who li{background:#fff;border:1px solid var(--lightgrey);border-radius:999px;padding:6px 14px;font-size:.9rem;color:var(--navy);font-weight:500}
+
+  .steps{counter-reset:step;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .steps li{position:relative;background:#fff;border:1px solid #e3e7eb;border-radius:10px;padding:56px 18px 20px}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;top:16px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font:700 .9rem/30px Poppins,Arial,sans-serif;text-align:center}
+  .steps h3{font-size:1rem}
+  .steps p{font-size:.92rem;color:#333;margin:0}
+
+  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .value{padding:22px;border-radius:10px;background:#fff;border:1px solid #e3e7eb}
+  .value h3{color:var(--navy)}
+  .value p{font-size:.93rem;color:#333;margin:0}
+
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .contact-box{background:#fff;border:1px solid #e3e7eb;border-radius:10px;overflow:hidden}
+  .contact-box .band{background:var(--navy);color:#fff;font-weight:700;padding:14px 24px;font-size:1.05rem}
+  .contact-box dl{margin:0;padding:22px 24px}
+  .contact-box dt{font-weight:700;font-size:.85rem;color:var(--grey);text-transform:uppercase;letter-spacing:.05em;margin-top:14px}
+  .contact-box dt:first-child{margin-top:0}
+  .contact-box dd{margin:2px 0 0;font-size:1.05rem}
+  .contact-box dd a{font-weight:600}
+
+  footer{background:var(--navy);color:#dfe5ee;padding:44px 0 28px;font-size:.92rem}
+  footer .cols{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+  footer .name{font-family:Poppins,Arial,sans-serif;font-weight:700;color:#fff;font-size:1.15rem}
+  footer .tag{color:var(--mist);font-style:italic}
+  footer a{color:#fff}
+  footer .legal{border-top:1px solid rgba(255,255,255,.18);margin-top:28px;padding-top:18px;color:#b9c3d1;font-size:.85rem}
+
+  @media (max-width:980px){
+    .g3,.values{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .about,.contact{grid-template-columns:1fr;gap:32px}
+  }
+  @media (max-width:760px){
+    body{font-size:16px}
+    .menu-btn{display:block}
+    nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid #e7eaee}
+    nav ul.open{display:flex}
+    nav li a{display:block;padding:14px 24px;border-top:1px solid #f0f2f4}
+    .brand img{width:170px}
+    .g3,.g2,.values,.steps{grid-template-columns:1fr}
+    section{padding:60px 0}
+    .hero{padding:60px 0}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip" aria-hidden="true"></div>
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="DataSense Pasifik Advisory home"><img src="assets/logo.png" alt="DataSense Pasifik Advisory" width="210" height="63"></a>
+    <nav aria-label="Main">
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">How we work</a></li>
+        <li><a href="#commitments">Our commitments</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero" id="top">
+    <div class="wrap">
+      <div class="eyebrow">Business advisory · Papua New Guinea &amp; the Pacific</div>
+      <h1>Empowering Pacific futures through data.</h1>
+      <p class="lead">DataSense Pasifik Advisory helps government, business, development partners and communities turn information into sound decisions – with data handled securely, ethically and with respect for Pacific cultures.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Start a conversation</a>
+        <a class="btn ghost" href="#services">Explore our services</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <span class="kicker">About us</span>
+        <h2>A Pacific advisory firm built on trust</h2>
+        <p>DataSense Pasifik Advisory is a business advisory services firm. We work remotely, with the flexibility to serve clients across Papua New Guinea and the Pacific, bringing together data, analytics, governance and financial expertise.</p>
+        <p>We believe data and technology should serve people and communities. That means being honest about methods and limits, protecting the information entrusted to us, and contributing to sustainable development and social wellbeing in the region.</p>
+        <ul class="who" aria-label="Who we work with">
+          <li>Government</li><li>Private sector</li><li>Development partners</li><li>NGOs</li><li>Research institutions</li><li>Communities</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <p><strong>Our purpose</strong></p>
+        <p>To use data, analytics and advisory services to contribute positively to sustainable development and social wellbeing in Papua New Guinea and the Pacific.</p>
+        <p style="margin:0"><strong>Our way of working:</strong> professional, transparent and accountable – grounded in respect for local customs, leadership structures and collective wellbeing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Services</span>
+        <h2>What we do</h2>
+        <p>Practical advice and hands-on support, scoped to your objectives, budget and timelines.</p>
+      </div>
+      <div class="grid g3">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>Data governance &amp; management</h3>
+          <p>Policies, procedures and controls for how your organisation collects, stores, shares, keeps and disposes of data.</p>
+          <ul><li>Data classification &amp; access</li><li>Data lifecycle procedures</li><li>Privacy &amp; confidentiality controls</li></ul>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>Data analytics &amp; insight</h3>
+          <p>Turning raw data into clear findings that decision-makers can trust and act on.</p>
+          <ul><li>Dashboards &amp; data visualisation</li><li>Survey &amp; research data analysis</li><li>Statistical modelling &amp; reporting</li></ul>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>Information security advisory</h3>
+          <p>Proportionate, risk-based security for organisations of every size.</p>
+          <ul><li>Security policy &amp; risk assessment</li><li>Incident response planning</li><li>Cybersecurity awareness training</li></ul>
+        </article>
+        <article class="card">
+          <span class="num">04</span>
+          <h3>Financial &amp; business advisory</h3>
+          <p>Sound financial foundations for small businesses, cooperatives and organisations.</p>
+          <ul><li>Chart of accounts &amp; bookkeeping guides</li><li>Management accounts &amp; reporting</li><li>Operations, finance &amp; procurement procedures</li></ul>
+        </article>
+        <article class="card">
+          <span class="num">05</span>
+          <h3>Responsible technology &amp; AI</h3>
+          <p>Helping you adopt digital tools and artificial intelligence in ways that are transparent, fair and human-centred.</p>
+          <ul><li>Technology readiness reviews</li><li>Ethical AI &amp; automation guidance</li></ul>
+        </article>
+        <article class="card">
+          <span class="num">06</span>
+          <h3>Capacity building &amp; training</h3>
+          <p>Building skills in your own team so improvements last after our engagement ends.</p>
+          <ul><li>Data literacy workshops</li><li>Governance &amp; privacy awareness</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">How we work</span>
+        <h2>A clear path from first conversation to results</h2>
+        <p>Every engagement follows a structured process so expectations, responsibilities and data-handling arrangements are clear from day one.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Initial conversation</h3><p>Tell us about your organisation, goals and timelines. We confirm we are the right fit.</p></li>
+        <li><h3>Discovery</h3><p>We meet with you and your stakeholders to understand needs, data, risks and community considerations.</p></li>
+        <li><h3>Proposal</h3><p>A clear scope of work, methodology, deliverables, timeline, team and pricing.</p></li>
+        <li><h3>Agreement &amp; kickoff</h3><p>Contracts, confidentiality and data-sharing arrangements are agreed, then work begins with a joint kickoff.</p></li>
+        <li><h3>Delivery &amp; review</h3><p>Regular progress reporting, open communication, and a final review of what worked.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="commitments" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Our commitments</span>
+        <h2>Responsible with your information</h2>
+        <p>Our team works under a Code of Conduct and Ethics, an Information Security Policy and a Data Governance Standard Operating Procedure. Here is what that means for you.</p>
+      </div>
+      <div class="values">
+        <div class="value"><h3>Confidentiality</h3><p>Client information is shared only on a need-to-know basis, under signed confidentiality agreements that continue after our work ends.</p></div>
+        <div class="value"><h3>Security</h3><p>Secure storage, access controls, multi-factor authentication where feasible, and prompt incident reporting.</p></div>
+        <div class="value"><h3>Data minimisation</h3><p>We collect and use only the data a project needs, and securely return or dispose of it when it is no longer required.</p></div>
+        <div class="value"><h3>Cultural respect</h3><p>We respect local customs, community sensitivities and traditional knowledge, and promote informed participation.</p></div>
+        <div class="value"><h3>Integrity</h3><p>No bribes, kickbacks or improper influence. Conflicts of interest are declared and managed.</p></div>
+        <div class="value"><h3>Transparency</h3><p>We are clear about our methods, assumptions and limitations, and we communicate findings accurately.</p></div>
+        <div class="value"><h3>Fairness &amp; inclusion</h3><p>We guard against bias and consider the impact of data and technology on vulnerable groups.</p></div>
+        <div class="value"><h3>Continuous learning</h3><p>We keep our skills current in data governance, cybersecurity, analytics and emerging technology.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <span class="kicker">Contact</span>
+        <h2>Let’s talk about your data</h2>
+        <p>Whether you need a governance framework, clearer reporting or a second opinion on a data project, we would be glad to hear from you.</p>
+        <p style="color:var(--grey)">Please do not send sensitive or personal data in your first message. Once we have agreed how to work together, we will set up a secure way to share information.</p>
+      </div>
+      <div class="contact-box">
+        <div class="band">Get in touch</div>
+        <dl>
+          <!-- REPLACE the bracketed placeholders below with real contact details before going live -->
+          <dt>Email</dt>
+          <dd><a href="mailto:[email@example.com]">[email@example.com]</a></dd>
+          <dt>Phone</dt>
+          <dd>[+675 0000 0000]</dd>
+          <dt>Where we work</dt>
+          <dd>Remotely, with the flexibility to serve clients across Papua New Guinea and the Pacific</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="name">DataSense Pasifik Advisory</div>
+        <div class="tag">Empowering Pacific futures through data.</div>
+      </div>
+      <div>
+        <a href="#about">About</a> · <a href="#services">Services</a> · <a href="#approach">How we work</a> · <a href="#commitments">Commitments</a> · <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> DataSense Pasifik Advisory. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn=document.querySelector('.menu-btn'), menu=document.getElementById('menu');
+    btn.addEventListener('click',function(){
+      var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded',open);
+    });
+    menu.addEventListener('click',function(e){ if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');} });
+    document.getElementById('yr').textContent=new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
