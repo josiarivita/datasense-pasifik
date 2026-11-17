@@ -267,6 +267,7 @@
   .jline{grid-row:3;grid-column:1/-1;align-self:center;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--mist),var(--midnavy) 45%,var(--navy) 75%,var(--green));transform-origin:left center}
   .jnode{grid-row:3;grid-column:var(--c);justify-self:center;align-self:center;position:relative;width:64px;height:64px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #fff,0 6px 18px rgba(11,35,70,.18);z-index:1}
   .jnode.last{background:var(--green)}
+  .jnode .tick{stroke-width:2.6}
   .jnode svg{fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .jnum{position:absolute;top:-6px;right:-6px;width:24px;height:24px;border-radius:50%;background:#fff;color:var(--navy);border:2px solid var(--navy);font:700 12px/20px Poppins,Arial,sans-serif;text-align:center}
   .jnode.last .jnum{color:var(--green);border-color:var(--green)}
@@ -539,9 +540,9 @@
         <div class="jcard down" style="--c:2;--i:1"><span class="jphase">Understand</span><h3><span class="sr">Step 2: </span>Discovery</h3><p>We meet with you and your stakeholders to understand needs, data, risks and community considerations.</p></div>
         <div class="jnode" style="--c:3;--i:2" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 12h6M9 15h6M9 18h4"/></svg><span class="jnum">3</span></div>
         <div class="jcard up" style="--c:3;--i:2"><span class="jphase">Agree</span><h3><span class="sr">Step 3: </span>Proposal</h3><p>A clear scope of work, methodology, deliverables, timeline, team and pricing.</p></div>
-        <div class="jnode" style="--c:4;--i:3" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="m14 4 6 6-8.5 8.5H5.5v-6z"/><path d="M3 21.5h18"/></svg><span class="jnum">4</span></div>
+        <div class="jnode" style="--c:4;--i:3" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M1.5 9.5 5 6.5l2.5 1"/><path d="M22.5 9.5 19 6.5l-3.5 1.2-3-1.2-4.2 3.3a1.3 1.3 0 0 0 1.6 2l2.6-1.8 5.3 4.6"/><path d="M5 6.5 2.8 14l2 1.8"/><path d="m19 6.5 2.2 7.5-3.4 1.9"/><path d="M17.8 15.9a1.2 1.2 0 0 1-1.7 1.6l-1.3-1.1M14.8 16.4a1.2 1.2 0 0 1-1.7 1.6l-1.1-.9M12 17.1a1.2 1.2 0 0 1-1.7 1.6L9 17.6M9 17.6l-1.4-1.2a1.2 1.2 0 0 0-1.7 1.6"/><path d="M4.8 15.8l1.1.9"/></svg><span class="jnum">4</span></div>
         <div class="jcard down" style="--c:4;--i:3"><span class="jphase">Agree</span><h3><span class="sr">Step 4: </span>Agreement &amp; kickoff</h3><p>Contracts, confidentiality and data-sharing arrangements are agreed, then work begins with a joint kickoff.</p></div>
-        <div class="jnode last" style="--c:5;--i:4" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></svg><span class="jnum">5</span></div>
+        <div class="jnode last" style="--c:5;--i:4" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path class="tick" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="jnum">5</span></div>
         <div class="jcard up" style="--c:5;--i:4"><span class="jphase">Deliver</span><h3><span class="sr">Step 5: </span>Delivery &amp; review</h3><p>Regular progress reporting, open communication, and a final review of what worked.</p></div>
       </div>
     </div>
