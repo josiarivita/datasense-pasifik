@@ -1,26 +1,37 @@
 # DataSense Pasifik Advisory – website
 
-Public website for DataSense Pasifik Advisory. *Empowering Pacific futures through data.*
+Public website for DATASENSE PASIFIK ADVISORY. *Empowering Pacific futures through data.*
 
-A single static page (`index.html`) plus the logo and icon in `assets/`. No build step; it runs on GitHub Pages as is.
+**Live site:** https://datasensepasifik.com
+**Contact email on the site:** info@datasensepasifik.com
 
-## Live site
+## What's in this repository
 
-https://datasensepasifik.com (domain registered with GoDaddy, hosted on GitHub Pages; the `CNAME` file tells GitHub which domain to serve).
+| File | What it is |
+|---|---|
+| `index.html` | The whole website: text, layout and styling |
+| `assets/logo.png` | Logo shown top left |
+| `assets/favicon.png` | Small icon shown in the browser tab |
+| `CNAME` | Tells GitHub to serve the site at datasensepasifik.com. Do not delete. |
+| `.nojekyll` | Tells GitHub to publish the files as they are. Do not delete. |
 
-Contact email shown on the site: info@datasensepasifik.com
+## How it is hosted
 
-## Publish on GitHub Pages
+- **Hosting:** GitHub Pages, deploying from the `main` branch, folder `/ (root)` (Settings → Pages).
+- **Domain:** datasensepasifik.com, registered with GoDaddy.
+- **DNS records in GoDaddy:**
 
-1. Sign in at github.com and click **New repository**.
-2. Name it `datasense-pasifik` (or `<your-username>.github.io` to get the shorter address). Set it to **Public** and click **Create repository**.
-3. On the new repository page, click **uploading an existing file**, drag in `index.html`, `README.md` and the `assets` folder, then click **Commit changes**.
-4. Go to **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, branch **main**, folder **/ (root)**, then **Save**.
-5. After a minute or two the site is live at `https://<your-username>.github.io/datasense-pasifik/`.
+| Type | Name | Value |
+|---|---|---|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | josiarivita.github.io |
 
-## Custom domain (optional)
+## Making changes
 
-If you buy a domain such as `datasensepasifik.com`, enter it under **Settings → Pages → Custom domain**, add the DNS records GitHub shows you at your domain registrar, and tick **Enforce HTTPS**.
+Edit `index.html` (click the file, then the pencil icon) and click **Commit changes**. The live site updates within a few minutes.
 
 ## Brand
 
