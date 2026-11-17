@@ -190,6 +190,34 @@
   .g3{grid-template-columns:repeat(3,1fr)}
   .g2{grid-template-columns:repeat(2,1fr)}
   .card{background:#fff;border:1px solid #e3e7eb;border-radius:10px;padding:28px;border-top:4px solid var(--navy)}
+  .svc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:start}
+  .svc{background:#fff;border:1px solid #e3e7eb;border-left:4px solid var(--navy);border-radius:10px;transition:box-shadow .2s,border-color .2s}
+  .svc[open]{border-left-color:var(--green);box-shadow:0 6px 20px rgba(11,35,70,.08)}
+  .svc summary{list-style:none;cursor:pointer;display:flex;gap:16px;align-items:flex-start;padding:22px 22px 22px 20px}
+  .svc summary::-webkit-details-marker{display:none}
+  .svc summary:hover .svc-title{color:var(--green)}
+  .svc summary:focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:8px}
+  .svc-icon{flex:0 0 52px;height:52px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center}
+  .svc-icon svg{fill:none;stroke:var(--navy);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .svc-icon svg .acc{stroke:var(--green)}
+  .svc-head{flex:1;display:flex;flex-direction:column;gap:4px}
+  .svc-head .num{font-family:Poppins,Arial,sans-serif;font-weight:700;color:var(--green);font-size:var(--fs-small)}
+  .svc-title{font-weight:700;font-size:var(--fs-h3);line-height:1.3;color:#000;transition:color .15s}
+  .svc-desc{color:var(--grey)}
+  .chev{flex:0 0 28px;height:28px;border-radius:50%;border:1.5px solid var(--lightgrey);position:relative;margin-top:4px;transition:transform .25s,background .2s,border-color .2s}
+  .chev::before{content:"";position:absolute;left:9px;top:7px;width:7px;height:7px;border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);transform:rotate(45deg)}
+  .svc[open] .chev{transform:rotate(180deg);background:var(--navy);border-color:var(--navy)}
+  .svc[open] .chev::before{border-color:#fff}
+  .svc-body{padding:0 24px 22px 88px;animation:svcIn .28s ease-out}
+  .svc-body ul{margin:0 0 14px;padding-left:1.1em}
+  .svc-body li{margin:.45em 0}
+  .svc-body b{color:var(--navy)}
+  .svc-link{font-weight:600;text-decoration:none}
+  .svc-link:hover{text-decoration:underline}
+  @keyframes svcIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  @media (max-width:860px){.svc-list{grid-template-columns:1fr}}
+  @media (max-width:520px){.svc-body{padding-left:24px}.svc summary{gap:12px}.svc-icon{flex-basis:44px;height:44px}}
+  @media (prefers-reduced-motion:reduce){.svc-body{animation:none}.chev,.svc{transition:none}}
   .card.pkg{border-top-color:var(--green)}
   .card .num{font-family:Poppins,Arial,sans-serif;font-weight:700;color:var(--green);font-size:var(--fs-small);margin-bottom:10px;display:block}
   .card p{color:#000;margin:0}
@@ -305,45 +333,75 @@
       <div class="section-head">
         <span class="kicker">Services</span>
         <h2>Data services for organisations in PNG and the Pacific</h2>
-        <p>Practical data intelligence for real-world Pacific systems. We start from where your data is today – paper records, spreadsheets or legacy systems – and build towards information you can trust and use.</p>
+        <p>Practical data intelligence for real-world Pacific systems. We start from where your data is today – paper records, spreadsheets or legacy systems – and build towards information you can trust and use. Select a service to see what it includes.</p>
       </div>
-      <div class="grid g3">
-        <article class="card">
-          <span class="num">01</span>
-          <h3>Data foundations &amp; transformation</h3>
-          <p>Understand where your data stands and build the foundations to improve it.</p>
-          <ul><li>Data maturity assessments &amp; roadmaps</li><li>Data audits &amp; health checks</li><li>Data cleaning &amp; standardisation</li><li>Data governance frameworks</li><li>Data architecture &amp; digitisation advice</li></ul>
-        </article>
-        <article class="card">
-          <span class="num">02</span>
-          <h3>Business intelligence &amp; analytics</h3>
-          <p>Turn your data into dashboards, measures and insights that leaders can act on.</p>
-          <ul><li>Executive dashboards (Power BI)</li><li>KPI frameworks &amp; performance measurement</li><li>Data analysis &amp; insights</li><li>Reporting automation</li><li>Decision intelligence advice for leaders and boards</li></ul>
-        </article>
-        <article class="card">
-          <span class="num">03</span>
-          <h3>Data for development, equity &amp; social impact</h3>
-          <p>Measure the outcomes that matter for programs, policy and communities.</p>
-          <ul><li>Gender &amp; inclusion data systems</li><li>Monitoring, evaluation &amp; learning (MEL) data support</li><li>Social impact measurement</li><li>Policy &amp; program analytics</li></ul>
-        </article>
-        <article class="card">
-          <span class="num">04</span>
-          <h3>Embedded data advisory</h3>
-          <p>Ongoing data expertise for organisations without a full in-house data team.</p>
-          <ul><li>Fractional data leadership</li><li>Embedded analytics support</li><li>Ongoing BI &amp; reporting support</li><li>Data strategy implementation</li></ul>
-        </article>
-        <article class="card">
-          <span class="num">05</span>
-          <h3>Capacity building &amp; data literacy</h3>
-          <p>Build skills in your own team so improvements last after our work ends.</p>
-          <ul><li>Executive data literacy workshops</li><li>Practical analytics &amp; Power BI training</li><li>Data governance &amp; stewardship training</li><li>Coaching &amp; mentoring</li></ul>
-        </article>
-        <article class="card">
-          <span class="num">06</span>
-          <h3>Interoperability &amp; data sharing</h3>
-          <p>Help agencies and partners share data safely and consistently.</p>
-          <ul><li>Data-sharing frameworks</li><li>Interoperability roadmaps</li><li>Common data definitions &amp; standards</li></ul>
-        </article>
+      <div class="svc-list">
+        <details class="svc" name="svc">
+          <summary>
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v6.5c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V5.5"/><path d="M4.5 12v6.5c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V12"/></svg></span>
+            <span class="svc-head"><span class="num">01</span><span class="svc-title">Data foundations &amp; transformation</span><span class="svc-desc">Understand where your data stands and build the foundations to improve it.</span></span>
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="svc-body">
+            <ul><li><b>Data maturity assessment</b> – review of strategy, governance, people, processes, systems, quality and analytics, with a scorecard, gap analysis and prioritised roadmap</li><li><b>Data audit &amp; health check</b> – inventory of datasets and reports; completeness, consistency, duplication, ownership and risk</li><li><b>Data cleaning &amp; standardisation</b> – profile, validate, de-duplicate and standardise data, identifiers and definitions</li><li><b>Excel to Insight</b> – turn spreadsheet reporting into structured datasets and decision-ready dashboards</li><li><b>Data governance frameworks</b> – ownership, stewardship, standards, quality rules, classification, access and retention</li><li><b>Data architecture &amp; digitisation</b> – practical current- and target-state designs and low-cost data pipelines</li></ul>
+            <a class="svc-link" href="#contact">Ask about this service →</a>
+          </div>
+        </details>
+        <details class="svc" name="svc">
+          <summary>
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M3.5 20.5h17"/><rect x="5" y="12.5" width="3" height="6" rx=".6"/><rect x="10.5" y="9" width="3" height="9.5" rx=".6"/><rect x="16" y="5.5" width="3" height="13" rx=".6"/><path class="acc" d="M4.5 9.5 9.5 6l4 2 6-5"/></svg></span>
+            <span class="svc-head"><span class="num">02</span><span class="svc-title">Business intelligence &amp; analytics</span><span class="svc-desc">Turn your data into dashboards, measures and insights that leaders can act on.</span></span>
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="svc-body">
+            <ul><li><b>Executive dashboards</b> – Power BI dashboards and management reports for strategic, operational and program performance</li><li><b>Performance measurement</b> – KPI frameworks, indicator dictionaries, scorecards and reporting calendars</li><li><b>Data analysis &amp; insights</b> – trend, segmentation, variance and cohort analysis</li><li><b>Reporting automation</b> – repeatable data preparation and refresh to cut manual reporting time</li><li><b>Decision intelligence</b> – options, implications, risks and recommended actions for leaders and boards</li></ul>
+            <a class="svc-link" href="#contact">Ask about this service →</a>
+          </div>
+        </details>
+        <details class="svc" name="svc">
+          <summary>
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><circle cx="12" cy="7" r="2.8"/><path d="M6.8 19.5v-1.8a5.2 5.2 0 0 1 10.4 0v1.8"/><circle class="acc" cx="4.8" cy="9.6" r="2"/><path class="acc" d="M1.8 18.5v-1a3.8 3.8 0 0 1 4-3.7"/><circle class="acc" cx="19.2" cy="9.6" r="2"/><path class="acc" d="M22.2 18.5v-1a3.8 3.8 0 0 0-4-3.7"/></svg></span>
+            <span class="svc-head"><span class="num">03</span><span class="svc-title">Data for development, equity &amp; social impact</span><span class="svc-desc">Measure the outcomes that matter for programs, policy and communities.</span></span>
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="svc-body">
+            <ul><li><b>Gender &amp; inclusion data systems</b> – gender-disaggregated indicators, reporting and dashboards</li><li><b>Monitoring, evaluation &amp; learning (MEL)</b> – indicator frameworks, data collection tools, results tracking and learning products</li><li><b>Social impact measurement</b> – outcome measurement and evidence-based program reporting</li><li><b>Policy &amp; program analytics</b> – analysis of administrative and program data to inform policy, resourcing and service delivery</li></ul>
+            <a class="svc-link" href="#contact">Ask about this service →</a>
+          </div>
+        </details>
+        <details class="svc" name="svc">
+          <summary>
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M3.5 5.5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v5.5a2 2 0 0 1-2 2H9l-3.5 3v-3h0a2 2 0 0 1-2-2z"/><path class="acc" d="M19 8.5h.5a2 2 0 0 1 2 2V16a2 2 0 0 1-2 2h-.5v2.8L15.5 18h-4a2 2 0 0 1-2-1.6"/></svg></span>
+            <span class="svc-head"><span class="num">04</span><span class="svc-title">Embedded data advisory</span><span class="svc-desc">Ongoing data expertise for organisations without a full in-house data team.</span></span>
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="svc-body">
+            <ul><li><b>Fractional data leadership</b> – part-time strategic guidance on data priorities, governance, architecture and executive reporting</li><li><b>Embedded analytics support</b> – an outsourced or supplementary data function for analysis, dashboards and data quality</li><li><b>Ongoing BI &amp; reporting support</b> – maintain reports, improve measures, support users and deliver scheduled insights</li><li><b>Data strategy implementation</b> – turn strategy recommendations into workplans, governance routines and projects</li></ul>
+            <a class="svc-link" href="#contact">Ask about this service →</a>
+          </div>
+        </details>
+        <details class="svc" name="svc">
+          <summary>
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M12 4 1.8 9 12 14l10.2-5z"/><path d="M6 11.2v4.6c0 1.6 2.7 3.2 6 3.2s6-1.6 6-3.2v-4.6"/><path class="acc" d="M22.2 9v6"/></svg></span>
+            <span class="svc-head"><span class="num">05</span><span class="svc-title">Capacity building &amp; data literacy</span><span class="svc-desc">Build skills in your own team so improvements last after our work ends.</span></span>
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="svc-body">
+            <ul><li><b>Executive data literacy workshops</b> – reading data, asking better questions, using KPIs and evidence in decisions</li><li><b>Practical analytics training</b> – data preparation, spreadsheet practice, Power BI, visualisation and reporting</li><li><b>Data governance &amp; stewardship training</b> – ownership, quality, standards, privacy and responsible use</li><li><b>Coaching &amp; mentoring</b> – guided project delivery and knowledge transfer to your staff</li></ul>
+            <a class="svc-link" href="#contact">Ask about this service →</a>
+          </div>
+        </details>
+        <details class="svc" name="svc">
+          <summary>
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><circle cx="12" cy="12" r="2.6"/><circle class="acc" cx="4.5" cy="5" r="2"/><circle class="acc" cx="19.5" cy="5" r="2"/><circle class="acc" cx="4.5" cy="19" r="2"/><circle class="acc" cx="19.5" cy="19" r="2"/><path d="m6 6.4 4.1 3.8M18 6.4l-4.1 3.8M6 17.6l4.1-3.8M18 17.6l-4.1-3.8"/></svg></span>
+            <span class="svc-head"><span class="num">06</span><span class="svc-title">Interoperability &amp; data sharing</span><span class="svc-desc">Help agencies and partners share data safely and consistently.</span></span>
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="svc-body">
+            <ul><li><b>Data-sharing frameworks</b> – governance, roles, standards, permitted uses, access controls and exchange processes</li><li><b>Interoperability roadmaps</b> – assess fragmentation and plan phased options for connecting information</li><li><b>Common data definitions &amp; standards</b> – agree identifiers, reference data, business rules, metadata and reporting definitions</li></ul>
+            <a class="svc-link" href="#contact">Ask about this service →</a>
+          </div>
+        </details>
       </div>
 
       <div class="section-head" style="margin:64px 0 28px">
@@ -452,6 +510,12 @@
     });
     menu.addEventListener('click',function(e){ if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');} });
     document.getElementById('yr').textContent=new Date().getFullYear();
+    document.querySelectorAll('details.svc').forEach(function(d){
+      d.addEventListener('toggle',function(){
+        if(d.open){document.querySelectorAll('details.svc').forEach(function(o){if(o!==d&&o.open)o.open=false;});}
+      });
+    });
+
   })();
 </script>
 </body>
