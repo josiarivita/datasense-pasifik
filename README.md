@@ -2,7 +2,7 @@
 
 Public website for DATASENSE PASIFIK ADVISORY. *Empowering Pacific futures through data.*
 
-**Live site:** https://datasensepasifik.com
+**Live site:** https://www.datasensepasifik.com
 **Contact email on the site:** info@datasensepasifik.com
 
 ## What's in this repository
@@ -12,7 +12,7 @@ Public website for DATASENSE PASIFIK ADVISORY. *Empowering Pacific futures throu
 | `index.html` | The whole website: text, layout and styling |
 | `assets/logo.png` | Logo shown top left |
 | `assets/favicon.png` | Small icon shown in the browser tab |
-| `CNAME` | Tells GitHub to serve the site at datasensepasifik.com. Do not delete. |
+| `CNAME` | Tells GitHub to serve the site at www.datasensepasifik.com (the bare datasensepasifik.com redirects to it). Do not delete. |
 | `.nojekyll` | Tells GitHub to publish the files as they are. Do not delete. |
 
 ## How it is hosted
