@@ -210,8 +210,8 @@
   .svc-desc{color:var(--grey)}
   .chev{flex:0 0 28px;height:28px;border-radius:50%;border:1.5px solid var(--lightgrey);position:relative;margin-top:4px;transition:transform .25s,background .2s,border-color .2s}
   .chev::before{content:"";position:absolute;left:9px;top:7px;width:7px;height:7px;border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);transform:rotate(45deg)}
-  .svc[open] .chev{transform:rotate(180deg);background:var(--navy);border-color:var(--navy)}
-  .svc[open] .chev::before{border-color:#fff}
+  .svc[open] > summary .chev{transform:rotate(180deg);background:var(--navy);border-color:var(--navy)}
+  .svc[open] > summary .chev::before{border-color:#fff}
   .svc-body{padding:0 24px 22px 88px;animation:svcIn .28s ease-out}
   .svc-body ul{margin:0 0 14px;padding-left:1.1em}
   .svc-body li{margin:.45em 0}
@@ -222,6 +222,28 @@
   @media (max-width:860px){.svc-list{grid-template-columns:1fr}}
   @media (max-width:520px){.svc-body{padding-left:24px}.svc summary{gap:12px}.svc-icon{flex-basis:44px;height:44px}}
   @media (prefers-reduced-motion:reduce){.svc-body{animation:none}.chev,.svc{transition:none}}
+  .svc.major{margin-top:28px;border-left-color:var(--green)}
+  .major-body{padding:0 22px 22px 88px;display:grid;gap:12px;animation:svcIn .28s ease-out}
+  .pkg{border:1px solid #e3e7eb;border-radius:10px;background:var(--cloud);transition:background .2s,border-color .2s}
+  .pkg[open]{background:#fff;border-color:var(--green)}
+  .pkg summary{list-style:none;cursor:pointer;display:flex;gap:14px;align-items:flex-start;padding:16px 18px}
+  .pkg summary::-webkit-details-marker{display:none}
+  .pkg summary:hover .svc-title{color:var(--green)}
+  .pkg summary:focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:8px}
+  .pkg .svc-title{font-size:var(--fs-body)}
+  .pkg .svc-desc{font-size:var(--fs-small)}
+  .svc-icon.sm{flex:0 0 42px;height:42px;border-radius:10px;background:#fff}
+  .pkg[open] > summary .svc-icon.sm{background:var(--tint)}
+  .pkg .chev{flex-basis:24px;height:24px;margin-top:2px}
+  .pkg .chev::before{left:7px;top:5px;width:6px;height:6px}
+  .pkg[open] > summary .chev{transform:rotate(180deg);background:var(--navy);border-color:var(--navy)}
+  .pkg[open] > summary .chev::before{border-color:#fff}
+  .pkg-body{padding:0 18px 18px 74px;animation:svcIn .28s ease-out}
+  .pkg-label{font-weight:700;font-size:var(--fs-small);text-transform:uppercase;letter-spacing:.05em;color:var(--grey);margin:0 0 4px}
+  .pkg-body ul{margin:0 0 12px;padding-left:1.1em}
+  .pkg-body li{margin:.35em 0}
+  @media (max-width:520px){.major-body{padding:0 14px 16px}.pkg-body{padding-left:18px}}
+  @media (prefers-reduced-motion:reduce){.major-body,.pkg-body{animation:none}}
   .card.pkg{border-top-color:var(--green)}
   .card .num{font-family:Poppins,Arial,sans-serif;font-weight:700;color:var(--green);font-size:var(--fs-small);margin-bottom:10px;display:block}
   .card p{color:#000;margin:0}
@@ -408,28 +430,51 @@
         </details>
       </div>
 
-      <div class="section-head" style="margin:64px 0 28px">
-        <h3 style="font-family:Poppins,Arial,sans-serif;color:var(--navy);font-size:var(--fs-h2)">Flagship packages</h3>
-        <p>Three ready-made ways to start working with us. Each is scoped through a discovery conversation and a written proposal.</p>
-      </div>
-      <div class="grid g3">
-        <article class="card pkg">
-          <h3>Data Foundations Assessment</h3>
-          <p>A clear picture of your data today and a practical plan to improve it.</p>
-          <ul><li>Data maturity assessment</li><li>Data inventory</li><li>Quality &amp; governance review</li><li>Prioritised roadmap</li><li>Executive presentation</li></ul>
-        </article>
-        <article class="card pkg">
-          <h3>Excel to Insight</h3>
-          <p>Move from manual spreadsheet reporting to reliable, repeatable dashboards.</p>
-          <ul><li>Data profiling &amp; clean-up</li><li>Structured reporting dataset</li><li>Automated report or dashboard</li><li>Handover &amp; user training</li></ul>
-        </article>
-        <article class="card pkg">
-          <h3>Embedded Data Advisory</h3>
-          <p>A monthly arrangement giving you ongoing data support and advice.</p>
-          <ul><li>Agreed monthly advisory &amp; delivery</li><li>Reporting &amp; analytics support</li><li>Governance advice</li><li>Management insights</li><li>Skills transfer to your team</li></ul>
-        </article>
-      </div>
-      <p style="margin-top:28px"><a class="btn primary" href="#contact">Ask about a package</a></p>
+      <details class="svc major">
+        <summary>
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M12 2.8 20.5 7v10L12 21.2 3.5 17V7z"/><path d="M3.5 7 12 11.2 20.5 7M12 11.2v10"/><path class="acc" d="m7.8 4.9 8.5 4.2"/></svg></span>
+          <span class="svc-head"><span class="num">Packages</span><span class="svc-title">Flagship packages</span><span class="svc-desc">Three ready-made ways to start working with us. Each is scoped through a discovery conversation and a written proposal.</span></span>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="major-body">
+            <details class="pkg" name="pkg">
+              <summary>
+                <span class="svc-icon sm" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 20.5h16"/><path d="M6 20.5V14h3v6.5M10.5 20.5V10h3v10.5M15 20.5V6h3v14.5"/><path class="acc" d="m14.5 3.5 2-1.5 2 1.5"/></svg></span>
+                <span class="svc-head"><span class="svc-title">Data Foundations Assessment</span><span class="svc-desc">A clear picture of your data today and a practical plan to improve it.</span></span>
+                <span class="chev" aria-hidden="true"></span>
+              </summary>
+              <div class="pkg-body">
+                <p class="pkg-label">What you get</p>
+                <ul><li>Data maturity assessment</li><li>Data inventory</li><li>Quality &amp; governance review</li><li>Prioritised roadmap</li><li>Executive presentation</li></ul>
+                <a class="svc-link" href="#contact">Ask about this package →</a>
+              </div>
+            </details>
+            <details class="pkg" name="pkg">
+              <summary>
+                <span class="svc-icon sm" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><rect x="3" y="4" width="10" height="12" rx="1.2"/><path d="M3 8h10M3 12h10M7.5 4v12"/><path class="acc" d="M14.5 10h3.5m0 0-1.5-1.5M18 10l-1.5 1.5"/><rect class="acc" x="15" y="13.5" width="6" height="6.5" rx="1"/><path class="acc" d="M16.8 18.5v-2M18 18.5v-3M19.2 18.5v-1.5"/></svg></span>
+                <span class="svc-head"><span class="svc-title">Excel to Insight</span><span class="svc-desc">Move from manual spreadsheet reporting to reliable, repeatable dashboards.</span></span>
+                <span class="chev" aria-hidden="true"></span>
+              </summary>
+              <div class="pkg-body">
+                <p class="pkg-label">What you get</p>
+                <ul><li>Data profiling &amp; clean-up</li><li>Structured reporting dataset</li><li>Automated report or dashboard</li><li>Handover &amp; user training</li></ul>
+                <a class="svc-link" href="#contact">Ask about this package →</a>
+              </div>
+            </details>
+            <details class="pkg" name="pkg">
+              <summary>
+                <span class="svc-icon sm" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><rect x="3.5" y="5" width="17" height="15.5" rx="1.8"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path class="acc" d="m9 15 2 2 4-4.5"/></svg></span>
+                <span class="svc-head"><span class="svc-title">Embedded Data Advisory</span><span class="svc-desc">A monthly arrangement giving you ongoing data support and advice.</span></span>
+                <span class="chev" aria-hidden="true"></span>
+              </summary>
+              <div class="pkg-body">
+                <p class="pkg-label">What you get</p>
+                <ul><li>Agreed monthly advisory &amp; delivery</li><li>Reporting &amp; analytics support</li><li>Governance advice</li><li>Management insights</li><li>Skills transfer to your team</li></ul>
+                <a class="svc-link" href="#contact">Ask about this package →</a>
+              </div>
+            </details>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -515,10 +560,15 @@
       var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded',open);
     });
     menu.addEventListener('click',function(e){ if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');} });
-    document.getElementById('yr').textContent=new Date().getFullYear();
-    document.querySelectorAll('details.svc').forEach(function(d){
+    document.querySelectorAll('details.pkg').forEach(function(d){
       d.addEventListener('toggle',function(){
-        if(d.open){document.querySelectorAll('details.svc').forEach(function(o){if(o!==d&&o.open)o.open=false;});}
+        if(d.open){document.querySelectorAll('details.pkg').forEach(function(o){if(o!==d&&o.open)o.open=false;});}
+      });
+    });
+    document.getElementById('yr').textContent=new Date().getFullYear();
+    document.querySelectorAll('details.svc:not(.major)').forEach(function(d){
+      d.addEventListener('toggle',function(){
+        if(d.open){document.querySelectorAll('details.svc:not(.major)').forEach(function(o){if(o!==d&&o.open)o.open=false;});}
       });
     });
 
