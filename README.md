@@ -4,12 +4,11 @@ Public website for DataSense Pasifik Advisory. *Empowering Pacific futures throu
 
 A single static page (`index.html`) plus the logo and icon in `assets/`. No build step; it runs on GitHub Pages as is.
 
-## Before going live
+## Live site
 
-In `index.html`, search for `[` and replace the placeholders in the **Contact** section:
+https://datasensepasifik.com (domain registered with GoDaddy, hosted on GitHub Pages; the `CNAME` file tells GitHub which domain to serve).
 
-- `[email@example.com]` (appears twice: the link and the visible text)
-- `[+675 0000 0000]`
+Contact email shown on the site: info@datasensepasifik.com
 
 ## Publish on GitHub Pages
 
