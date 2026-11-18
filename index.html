@@ -139,233 +139,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#0B2346; --green:#1B4D2E; --grey:#5C6165; --midnavy:#3A4F6E;
-    --lightgrey:#B9BEC4; --mist:#DCE6DF; --tint:#E6EFE9; --cloud:#F4F6F8;
-    --black:#000; --white:#fff;
-    --max:1140px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  /* Type scale follows the Brand and Document Style Guide (section 4): body 10 pt = 16px on screen;
-     H1 22 pt = 2.2x, H2 16 pt = 1.6x, H3 12 pt = 1.2x, table/small text 9 pt = 0.9x */
-  :root{--fs-body:16px;--fs-h1:35px;--fs-h2:26px;--fs-h3:19px;--fs-small:14.4px}
-  body{margin:0;font-family:Inter,Arial,sans-serif;font-size:var(--fs-body);line-height:1.6;color:#000;background:var(--white)}
-  h1,h2{font-family:Poppins,Arial,sans-serif;font-weight:700;color:var(--navy);line-height:1.2;margin:0 0 .5em}
-  h3{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:var(--fs-h3);line-height:1.3;margin:0 0 .45em;color:#000}
-  p{margin:0 0 1em}
-  a{color:var(--green)}
-  a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:3px}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-  .skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:8px 14px;z-index:100}
-  .skip:focus{left:8px;top:8px}
-
-  /* Colour strip: Mist across most, then Navy, ending in Green */
-  .strip{height:6px;background:linear-gradient(90deg,var(--mist) 0 70%,var(--midnavy) 76%,var(--navy) 82% 92%,var(--green) 92% 100%)}
-
-  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid #e7eaee;backdrop-filter:saturate(1.2) blur(6px)}
-  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 24px;max-width:var(--max);margin:0 auto}
-  .brand img{display:block;width:210px;height:auto}
-  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px}
-  nav a{color:var(--navy);text-decoration:none;font-weight:600;font-size:var(--fs-small);text-transform:uppercase;letter-spacing:.06em}
-  nav a:hover{color:var(--green)}
-  .menu-btn{display:none;background:none;border:1px solid var(--lightgrey);border-radius:6px;padding:8px 12px;font:600 .9rem Inter,Arial,sans-serif;color:var(--navy);cursor:pointer}
-
-  .hero{background:linear-gradient(180deg,var(--white) 0%,var(--cloud) 100%);padding:88px 0 80px;border-bottom:1px solid #e7eaee}
-  .hero .eyebrow{font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;font-size:var(--fs-small);margin-bottom:14px}
-  .hero h1{font-size:var(--fs-h1);max-width:22ch}
-  .hero p.lead{font-size:var(--fs-body);color:var(--grey);max-width:62ch}
-  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
-  .btn{display:inline-block;padding:13px 24px;border-radius:6px;font-weight:600;text-decoration:none;font-size:var(--fs-body)}
-  .btn.primary{background:var(--navy);color:#fff}
-  .btn.primary:hover{background:var(--midnavy)}
-  .btn.ghost{border:2px solid var(--navy);color:var(--navy)}
-  .btn.ghost:hover{background:var(--navy);color:#fff}
-
-  section{padding:84px 0}
-  section.alt{background:var(--cloud)}
-  .section-head{max-width:720px;margin-bottom:44px}
-  .section-head h2{font-size:var(--fs-h2)}
-  .section-head p{color:var(--grey);font-size:var(--fs-body)}
-  .kicker{display:block;font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;font-size:var(--fs-small);margin-bottom:8px}
-
-  .grid{display:grid;gap:24px}
-  .g3{grid-template-columns:repeat(3,1fr)}
-  .g2{grid-template-columns:repeat(2,1fr)}
-  .card{background:#fff;border:1px solid #e3e7eb;border-radius:10px;padding:28px;border-top:4px solid var(--navy)}
-  .svc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:start}
-  .svc{background:#fff;border:1px solid #e3e7eb;border-left:4px solid var(--navy);border-radius:10px;transition:box-shadow .2s,border-color .2s}
-  .svc[open]{border-left-color:var(--green);box-shadow:0 6px 20px rgba(11,35,70,.08)}
-  .svc summary{list-style:none;cursor:pointer;display:flex;gap:16px;align-items:flex-start;padding:22px 22px 22px 20px}
-  .svc summary::-webkit-details-marker{display:none}
-  .svc summary:hover .svc-title{color:var(--green)}
-  .svc summary:focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:8px}
-  .svc-icon{flex:0 0 52px;height:52px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center}
-  .svc-icon svg{fill:none;stroke:var(--navy);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-  .svc-icon svg .acc{stroke:var(--green)}
-  .svc-head{flex:1;display:flex;flex-direction:column;gap:4px}
-  .svc-head .num{font-family:Poppins,Arial,sans-serif;font-weight:700;color:var(--green);font-size:var(--fs-small)}
-  .svc-title{font-weight:700;font-size:var(--fs-h3);line-height:1.3;color:#000;transition:color .15s}
-  .svc-desc{color:var(--grey)}
-  .chev{flex:0 0 28px;height:28px;border-radius:50%;border:1.5px solid var(--lightgrey);position:relative;margin-top:4px;transition:transform .25s,background .2s,border-color .2s}
-  .chev::before{content:"";position:absolute;left:9px;top:7px;width:7px;height:7px;border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);transform:rotate(45deg)}
-  .svc[open] > summary .chev{transform:rotate(180deg);background:var(--navy);border-color:var(--navy)}
-  .svc[open] > summary .chev::before{border-color:#fff}
-  .svc-body{padding:0 24px 22px 88px;animation:svcIn .28s ease-out}
-  .svc-body ul{margin:0 0 14px;padding-left:1.1em}
-  .svc-body li{margin:.45em 0}
-  .svc-body b{color:var(--navy);display:block}
-  .svc-body .d{display:block;color:#000}
-  .svc-link{font-weight:600;text-decoration:none}
-  .svc-link:hover{text-decoration:underline}
-  @keyframes svcIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-  @media (max-width:860px){.svc-list{grid-template-columns:1fr}}
-  @media (max-width:520px){.svc-body{padding-left:24px}.svc summary{gap:12px}.svc-icon{flex-basis:44px;height:44px}}
-  @media (prefers-reduced-motion:reduce){.svc-body{animation:none}.chev,.svc{transition:none}}
-  .svc.major{margin-top:28px;border-left-color:var(--green)}
-  .major-body{padding:0 22px 22px 88px;display:grid;gap:12px;animation:svcIn .28s ease-out}
-  .pkg{border:1px solid #e3e7eb;border-radius:10px;background:var(--cloud);transition:background .2s,border-color .2s}
-  .pkg[open]{background:#fff;border-color:var(--green)}
-  .pkg summary{list-style:none;cursor:pointer;display:flex;gap:14px;align-items:flex-start;padding:16px 18px}
-  .pkg summary::-webkit-details-marker{display:none}
-  .pkg summary:hover .svc-title{color:var(--green)}
-  .pkg summary:focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:8px}
-  .pkg .svc-title{font-size:var(--fs-body)}
-  .pkg .svc-desc{font-size:var(--fs-small)}
-  .svc-icon.sm{flex:0 0 42px;height:42px;border-radius:10px;background:#fff}
-  .pkg[open] > summary .svc-icon.sm{background:var(--tint)}
-  .pkg .chev{flex-basis:24px;height:24px;margin-top:2px}
-  .pkg .chev::before{left:7px;top:5px;width:6px;height:6px}
-  .pkg[open] > summary .chev{transform:rotate(180deg);background:var(--navy);border-color:var(--navy)}
-  .pkg[open] > summary .chev::before{border-color:#fff}
-  .pkg-body{padding:0 18px 18px 74px;animation:svcIn .28s ease-out}
-  .pkg-label{font-weight:700;font-size:var(--fs-small);text-transform:uppercase;letter-spacing:.05em;color:var(--grey);margin:0 0 4px}
-  .pkg-body ul{margin:0 0 12px;padding-left:1.1em}
-  .pkg-body li{margin:.35em 0}
-  @media (max-width:520px){.major-body{padding:0 14px 16px}.pkg-body{padding-left:18px}}
-  @media (prefers-reduced-motion:reduce){.major-body,.pkg-body{animation:none}}
-  .card.pkg{border-top-color:var(--green)}
-  .card .num{font-family:Poppins,Arial,sans-serif;font-weight:700;color:var(--green);font-size:var(--fs-small);margin-bottom:10px;display:block}
-  .card p{color:#000;margin:0}
-  .card ul{margin:.6em 0 0;padding-left:1.1em;color:#000}
-  .card li{margin:.2em 0}
-
-  .about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
-  .callout{background:var(--tint);border-left:5px solid var(--green);padding:24px 26px;border-radius:0 8px 8px 0}
-  .callout strong{color:var(--navy)}
-  .who{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:10px}
-  .who li{background:#fff;border:1px solid var(--lightgrey);border-radius:999px;padding:6px 14px;font-size:var(--fs-small);color:var(--navy);font-weight:500}
-
-  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .journey{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:auto 96px auto;column-gap:18px;position:relative;margin-top:8px}
-  .ph{grid-row:1;position:relative;text-align:center;padding-bottom:14px;margin-bottom:18px}
-  .ph::after{content:"";position:absolute;left:8px;right:8px;bottom:0;height:10px;border:2px solid var(--mist);border-bottom:0;border-radius:8px 8px 0 0}
-  .ph span{font-weight:700;font-size:var(--fs-small);letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
-  .ph1{grid-column:1/3}.ph2{grid-column:3/5}.ph3{grid-column:5/6}
-  .ph3::after{border-color:var(--tint)}.ph3 span{color:var(--green)}
-  .jline{grid-row:2;grid-column:1/-1;align-self:center;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--mist),var(--midnavy) 45%,var(--navy) 75%,var(--green));transform-origin:left center}
-  .jnode{grid-row:2;grid-column:var(--c);justify-self:center;align-self:center;position:relative;width:64px;height:64px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #fff,0 6px 18px rgba(11,35,70,.18);z-index:1}
-  .jnode.last{background:var(--green)}
-  .jnode .tick{stroke-width:2.6}
-  .jnode svg{fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-  .jnum{position:absolute;top:-6px;right:-6px;width:24px;height:24px;border-radius:50%;background:#fff;color:var(--navy);border:2px solid var(--navy);font:700 12px/20px Poppins,Arial,sans-serif;text-align:center}
-  .jnode.last .jnum{color:var(--green);border-color:var(--green)}
-  .jcard{grid-column:var(--c);position:relative;background:#fff;border:1px solid #e3e7eb;border-radius:12px;padding:18px 18px 16px}
-  .jcard.up{grid-row:1;align-self:end;margin-bottom:18px}
-  .jcard.down{grid-row:3;align-self:start;margin-top:18px}
-  .jcard::after{content:"";position:absolute;left:50%;width:2px;height:18px;background:var(--lightgrey);transform:translateX(-50%)}
-  .jcard.up::after{top:100%}
-  .jcard.down::after{bottom:100%}
-  .jcard h3{font-size:var(--fs-body);margin:4px 0 6px}
-  .jcard p{font-size:var(--fs-small);margin:0}
-  .jphase{display:none;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
-  .journey.anim .jline{transform:scaleX(0)}
-  .journey.anim .jnode{transform:scale(.4);opacity:0}
-  .journey.anim .jcard{opacity:0;transform:translateY(10px)}
-  .journey.anim .jcard.down{transform:translateY(-10px)}
-  .journey.anim.in .jline{transform:scaleX(1);transition:transform 1.4s cubic-bezier(.65,0,.35,1)}
-  .journey.anim.in .jnode{transform:scale(1);opacity:1;transition:transform .45s cubic-bezier(.34,1.56,.64,1),opacity .3s;transition-delay:calc(.15s + var(--i)*.25s)}
-  .journey.anim.in .jcard{opacity:1;transform:none;transition:opacity .5s,transform .5s;transition-delay:calc(.3s + var(--i)*.25s)}
-  @media (max-width:860px){
-    .journey{grid-template-columns:64px 1fr;grid-template-rows:none;column-gap:18px;row-gap:22px}
-    .ph{display:none}
-    .jphase{display:block}
-    .jline{grid-row:1/6;grid-column:1;justify-self:center;align-self:stretch;width:6px;height:auto;margin:20px 0;background:linear-gradient(180deg,var(--mist),var(--midnavy) 45%,var(--navy) 75%,var(--green));transform-origin:top center}
-    .journey.anim .jline{transform:scaleY(0)}
-    .journey.anim.in .jline{transform:scaleY(1)}
-    .jnode{grid-column:1;grid-row:var(--c);align-self:start;margin-top:6px}
-    .jcard,.jcard.up,.jcard.down{grid-column:2;grid-row:var(--c);margin:0;align-self:start}
-    .jcard::after,.jcard.up::after,.jcard.down::after{top:30px;bottom:auto;left:-18px;width:18px;height:2px;transform:none}
-    .journey.anim .jcard.down{transform:translateY(10px)}
-  }
-  @media (prefers-reduced-motion:reduce){.journey.anim .jline,.journey.anim .jnode,.journey.anim .jcard{transform:none!important;opacity:1!important;transition:none!important}}
-  .steps{counter-reset:step;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
-  .steps li{position:relative;background:#fff;border:1px solid #e3e7eb;border-radius:10px;padding:56px 18px 20px}
-  .steps li::before{counter-increment:step;content:counter(step);position:absolute;top:16px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font:700 .9rem/30px Poppins,Arial,sans-serif;text-align:center}
-  .steps h3{font-size:var(--fs-body)}
-  .steps p{font-size:var(--fs-small);color:#000;margin:0}
-
-  .vhint{color:var(--grey);font-size:var(--fs-small);margin:-28px 0 22px}
-  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .vcard{all:unset;box-sizing:border-box;display:block;height:240px;perspective:1000px;cursor:pointer;border-radius:14px}
-  .vcard:focus-visible{outline:3px solid var(--green);outline-offset:4px}
-  .vinner{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.4,.2,.2,1)}
-  .vcard.flipped .vinner{transform:rotateY(180deg)}
-  @media (hover:hover){.vcard:hover .vinner{transform:rotateY(180deg)}}
-  .vface{position:absolute;inset:0;display:flex;flex-direction:column;border-radius:14px;padding:22px;backface-visibility:hidden;-webkit-backface-visibility:hidden;font-family:Inter,Arial,sans-serif}
-  .vfront{background:#fff;border:1px solid #e3e7eb;align-items:flex-start;overflow:hidden}
-  .vfront::after{content:"";position:absolute;right:-30px;bottom:-30px;width:110px;height:110px;border-radius:50%;background:var(--tint);opacity:.7}
-  .vicon{width:58px;height:58px;border-radius:14px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:14px;position:relative;z-index:1}
-  .vcard:nth-child(even) .vicon{background:var(--green)}
-  .vicon svg{fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-  .vicon svg .acc{stroke:var(--mist)}
-  .vtitle{font-weight:700;font-size:var(--fs-h3);line-height:1.25;color:#000;position:relative;z-index:1}
-  .vpledge{font-family:Poppins,Arial,sans-serif;font-weight:600;color:var(--navy);font-size:var(--fs-body);line-height:1.35;margin-top:8px;position:relative;z-index:1}
-  .vcard:nth-child(even) .vpledge{color:var(--green)}
-  .vmore{margin-top:auto;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);position:relative;z-index:1}
-  .vback{background:var(--navy);color:#fff;transform:rotateY(180deg);justify-content:center}
-  .vcard:nth-child(even) .vback{background:var(--green)}
-  .vback .vtitle{color:#fff;font-size:var(--fs-body);margin-bottom:10px}
-  .vtext{font-size:var(--fs-small);line-height:1.55;color:#fff}
-  .vsrc{margin-top:auto;padding-top:12px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--mist);border-top:1px solid rgba(255,255,255,.25)}
-  @media (prefers-reduced-motion:reduce){.vinner{transition:none}}
-
-  .contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-  .contact-box{background:#fff;border:1px solid #e3e7eb;border-radius:10px;overflow:hidden}
-  .contact-box .band{background:var(--navy);color:#fff;font-weight:700;padding:14px 24px;font-size:var(--fs-h3)}
-  .contact-box dl{margin:0;padding:22px 24px}
-  .contact-box dt{font-weight:700;font-size:var(--fs-small);color:var(--grey);text-transform:uppercase;letter-spacing:.05em;margin-top:14px}
-  .contact-box dt:first-child{margin-top:0}
-  .contact-box dd{margin:2px 0 0;font-size:var(--fs-body)}
-  .contact-box dd a{font-weight:600}
-
-  footer{background:var(--navy);color:#dfe5ee;padding:44px 0 28px;font-size:var(--fs-body)}
-  footer .cols{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
-  footer .name{font-family:Poppins,Arial,sans-serif;font-weight:700;color:#fff;font-size:var(--fs-h3)}
-  footer .tag{color:var(--mist);font-style:italic}
-  footer a{color:#fff}
-  footer .links a{text-transform:uppercase;letter-spacing:.06em;font-size:var(--fs-small)}
-  footer .legal{border-top:1px solid rgba(255,255,255,.18);margin-top:28px;padding-top:18px;color:#b9c3d1;font-size:var(--fs-small)}
-
-  @media (max-width:980px){
-    .g3,.values{grid-template-columns:repeat(2,1fr)}
-    .steps{grid-template-columns:repeat(2,1fr)}
-    .about,.contact{grid-template-columns:1fr;gap:32px}
-  }
-  @media (max-width:760px){
-    :root{--fs-h1:30px;--fs-h2:24px}
-    .menu-btn{display:block}
-    nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid #e7eaee}
-    nav ul.open{display:flex}
-    nav li a{display:block;padding:14px 24px;border-top:1px solid #f0f2f4}
-    .brand img{width:170px}
-    .g3,.g2,.values,.steps{grid-template-columns:1fr}
-    section{padding:60px 0}
-    .hero{padding:60px 0}
-  }
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -435,7 +209,7 @@
           </summary>
           <div class="svc-body">
             <ul><li><b>Data maturity assessment</b><span class="d">Review of strategy, governance, people, processes, systems, quality and analytics, with a scorecard, gap analysis and prioritised roadmap</span></li><li><b>Data audit &amp; health check</b><span class="d">Inventory of datasets and reports, checking completeness, consistency, duplication, ownership and risk</span></li><li><b>Data cleaning &amp; standardisation</b><span class="d">Profile, validate, de-duplicate and standardise data, identifiers and definitions</span></li><li><b>Excel to Insight</b><span class="d">Turn spreadsheet reporting into structured datasets and decision-ready dashboards</span></li><li><b>Data governance frameworks</b><span class="d">Ownership, stewardship, standards, quality rules, classification, access and retention</span></li><li><b>Data architecture &amp; digitisation</b><span class="d">Practical current- and target-state designs and low-cost data pipelines</span></li></ul>
-            <a class="svc-link" href="#contact">Ask about this service →</a>
+            <a class="svc-link" href="services/data-foundations/">Read more about this service →</a><a class="svc-more" href="#contact">Ask about it</a>
           </div>
         </details>
         <details class="svc" name="svc">
@@ -446,7 +220,7 @@
           </summary>
           <div class="svc-body">
             <ul><li><b>Executive dashboards</b><span class="d">Power BI dashboards and management reports for strategic, operational and program performance</span></li><li><b>Performance measurement</b><span class="d">KPI frameworks, indicator dictionaries, scorecards and reporting calendars</span></li><li><b>Data analysis &amp; insights</b><span class="d">Trend, segmentation, variance and cohort analysis</span></li><li><b>Reporting automation</b><span class="d">Repeatable data preparation and refresh to cut manual reporting time</span></li><li><b>Decision intelligence</b><span class="d">Options, implications, risks and recommended actions for leaders and boards</span></li></ul>
-            <a class="svc-link" href="#contact">Ask about this service →</a>
+            <a class="svc-link" href="services/business-intelligence/">Read more about this service →</a><a class="svc-more" href="#contact">Ask about it</a>
           </div>
         </details>
         <details class="svc" name="svc">
@@ -457,7 +231,7 @@
           </summary>
           <div class="svc-body">
             <ul><li><b>Gender &amp; inclusion data systems</b><span class="d">Gender-disaggregated indicators, reporting and dashboards</span></li><li><b>Monitoring, evaluation &amp; learning (MEL)</b><span class="d">Indicator frameworks, data collection tools, results tracking and learning products</span></li><li><b>Social impact measurement</b><span class="d">Outcome measurement and evidence-based program reporting</span></li><li><b>Policy &amp; program analytics</b><span class="d">Analysis of administrative and program data to inform policy, resourcing and service delivery</span></li></ul>
-            <a class="svc-link" href="#contact">Ask about this service →</a>
+            <a class="svc-link" href="services/data-for-development/">Read more about this service →</a><a class="svc-more" href="#contact">Ask about it</a>
           </div>
         </details>
         <details class="svc" name="svc">
@@ -468,7 +242,7 @@
           </summary>
           <div class="svc-body">
             <ul><li><b>Fractional data leadership</b><span class="d">Part-time strategic guidance on data priorities, governance, architecture and executive reporting</span></li><li><b>Embedded analytics support</b><span class="d">An outsourced or supplementary data function for analysis, dashboards and data quality</span></li><li><b>Ongoing BI &amp; reporting support</b><span class="d">Maintain reports, improve measures, support users and deliver scheduled insights</span></li><li><b>Data strategy implementation</b><span class="d">Turn strategy recommendations into workplans, governance routines and projects</span></li></ul>
-            <a class="svc-link" href="#contact">Ask about this service →</a>
+            <a class="svc-link" href="services/embedded-data-advisory/">Read more about this service →</a><a class="svc-more" href="#contact">Ask about it</a>
           </div>
         </details>
         <details class="svc" name="svc">
@@ -479,7 +253,7 @@
           </summary>
           <div class="svc-body">
             <ul><li><b>Executive data literacy workshops</b><span class="d">Reading data, asking better questions, using KPIs and evidence in decisions</span></li><li><b>Practical analytics training</b><span class="d">Data preparation, spreadsheet practice, Power BI, visualisation and reporting</span></li><li><b>Data governance &amp; stewardship training</b><span class="d">Ownership, quality, standards, privacy and responsible use</span></li><li><b>Coaching &amp; mentoring</b><span class="d">Guided project delivery and knowledge transfer to your staff</span></li></ul>
-            <a class="svc-link" href="#contact">Ask about this service →</a>
+            <a class="svc-link" href="services/data-literacy-training/">Read more about this service →</a><a class="svc-more" href="#contact">Ask about it</a>
           </div>
         </details>
         <details class="svc" name="svc">
@@ -490,7 +264,7 @@
           </summary>
           <div class="svc-body">
             <ul><li><b>Data-sharing frameworks</b><span class="d">Governance, roles, standards, permitted uses, access controls and exchange processes</span></li><li><b>Interoperability roadmaps</b><span class="d">Assess fragmentation and plan phased options for connecting information</span></li><li><b>Common data definitions &amp; standards</b><span class="d">Agree identifiers, reference data, business rules, metadata and reporting definitions</span></li></ul>
-            <a class="svc-link" href="#contact">Ask about this service →</a>
+            <a class="svc-link" href="services/data-sharing-interoperability/">Read more about this service →</a><a class="svc-more" href="#contact">Ask about it</a>
           </div>
         </details>
       </div>

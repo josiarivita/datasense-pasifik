@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.datasensepasifik.com/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.datasensepasifik.com/services/data-foundations/</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.datasensepasifik.com/services/business-intelligence/</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.datasensepasifik.com/services/data-for-development/</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.datasensepasifik.com/services/embedded-data-advisory/</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.datasensepasifik.com/services/data-literacy-training/</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.datasensepasifik.com/services/data-sharing-interoperability/</loc>
+    <lastmod>2026-11-18</lastmod>
   </url>
 </urlset>

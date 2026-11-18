@@ -9,7 +9,9 @@ Public website for DATASENSE PASIFIK ADVISORY. *Empowering Pacific futures throu
 
 | File | What it is |
 |---|---|
-| `index.html` | The whole website: text, layout and styling |
+| `index.html` | Home page |
+| `services/<name>/index.html` | One page per service (6 pages) |
+| `assets/style.css` | Shared styling for all pages |
 | `assets/logo.png` | Logo shown top left |
 | `assets/favicon.png` | Small icon shown in the browser tab |
 | `CNAME` | Tells GitHub to serve the site at www.datasensepasifik.com (the bare datasensepasifik.com redirects to it). Do not delete. |
