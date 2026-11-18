@@ -402,3 +402,7 @@
   @media (min-width:981px){.hero-visual{margin-right:-40px}}
   @media (max-width:980px){.hero-visual{max-width:none}}
   .hero-map .mdots circle{opacity:.34}
+  .hero-map .inset{fill:rgba(255,255,255,.75);stroke:var(--mist);stroke-width:1.5}
+  .hero-map .inset-t{font:700 8.5px Inter,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;fill:var(--green)}
+  .hero-map .pdot{fill:var(--navy);opacity:.35}
+  .hero-map .mlabel.sm{font-size:9px}
