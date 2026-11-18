@@ -392,3 +392,8 @@
   .hero-map .inset-t{font:700 8.5px Inter,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;fill:var(--green)}
   .hero-map .pdot{fill:var(--navy);opacity:.35}
   .hero-map .mlabel.sm{font-size:9px}
+  .hero-visual{background:#fff;border:1px solid #e3e7eb;border-radius:16px;padding:20px 20px 14px;box-shadow:0 10px 30px rgba(11,35,70,.08)}
+  @media (min-width:981px){.hero-visual{margin-right:0}}
+  .hero-map .mlabel{stroke:#fff}
+  .hero-map .inset{fill:#fff}
+  .map-cap{margin-top:10px}
