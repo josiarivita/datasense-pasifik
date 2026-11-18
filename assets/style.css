@@ -295,3 +295,9 @@
   .svc.major.featured .pkg{background:#fff}
   .svc-sub{font-family:Poppins,Arial,sans-serif;color:var(--navy);font-size:var(--fs-h3);margin:0 0 18px}
   @media (max-width:980px){.svc.major.featured .major-body{grid-template-columns:1fr}}
+  /* ---------- Page background: faint DS mark tiles ---------- */
+  body{background:#F6F9F7 url("bg-tile.png") repeat;background-size:260px 260px}
+  .hero{background:linear-gradient(180deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.35) 100%)}
+  section{background:transparent}
+  section.alt,.academy-wrap{background:rgba(220,230,223,.45)}
+  .cta-band{background:var(--navy)}
