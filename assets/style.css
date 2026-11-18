@@ -317,20 +317,6 @@
   .hero-visual{position:relative}
   .map-cap{text-align:right;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin:6px 0 0}
   @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:24px}.hero-visual{max-width:520px}.map-cap{text-align:left}}
-  /* ---------- Ocean-wave section dividers ---------- */
-  .hero{border-bottom:0}
-  section.alt,.academy-wrap,.cta-band,footer{position:relative}
-  section.alt::before,section.alt::after,.academy-wrap::after,.cta-band::before,.cta-band::after,footer::before{content:"";position:absolute;left:0;right:0;height:48px;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
-  section.alt::before,.cta-band::before,footer::before{bottom:100%;-webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201440%2048%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%2026C180%206%20360%206%20540%2022S900%2046%201080%2030%201320%206%201440%2018V48H0Z%22/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201440%2048%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%2026C180%206%20360%206%20540%2022S900%2046%201080%2030%201320%206%201440%2018V48H0Z%22/%3E%3C/svg%3E")}
-  section.alt::after,.academy-wrap::after,.cta-band::after{top:100%;-webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201440%2048%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%200H1440V22C1260%2042%201080%2044%20900%2028S540%204%20360%2020%20120%2044%200%2030Z%22/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201440%2048%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%200H1440V22C1260%2042%201080%2044%20900%2028S540%204%20360%2020%20120%2044%200%2030Z%22/%3E%3C/svg%3E")}
-  section.alt::before,section.alt::after,.academy-wrap::after{background:rgba(220,230,223,.45)}
-  .cta-band::before,.cta-band::after,footer::before{background:var(--navy)}
-  section.alt:has(+ .academy-wrap)::after{display:none}
-  .cta-band + section.alt::before{display:none}
-  .cta-band::after{z-index:1}
-  section.alt:has(+ footer)::after{display:none}
-  footer{margin-top:48px}
-  section:has(+ footer){padding-bottom:36px}
   /* ---------- Excel to Insight before/after slider ---------- */
   .ba{position:relative;height:440px;border-radius:14px;overflow:hidden;border:1px solid #d5dbe1;box-shadow:0 12px 32px rgba(11,35,70,.12);background:#fff;user-select:none}
   .ba-layer{position:absolute;inset:0}
