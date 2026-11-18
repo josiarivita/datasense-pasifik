@@ -398,3 +398,11 @@
   .hero-map .inset{fill:#fff}
   .map-cap{margin-top:10px}
   .crumbs,.crumbs a,.crumbs [aria-current]{text-transform:uppercase;letter-spacing:.06em}
+  /* Flip cards: hide the face that is turned away (fixes text showing through on iPhone/Safari) */
+  .vface,.vface *{-webkit-backface-visibility:hidden;backface-visibility:hidden}
+  .vface{transition:visibility 0s linear .3s}
+  .vback{visibility:hidden}
+  .vcard.flipped .vfront{visibility:hidden}
+  .vcard.flipped .vback{visibility:visible}
+  @media (hover:hover){.vcard:hover .vfront{visibility:hidden}.vcard:hover .vback{visibility:visible}}
+  @media (prefers-reduced-motion:reduce){.vface{transition:none}}
